@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block head %}
+    <meta name="description" content="Blog page of {{author}}">
+{% endblock %}
+
+{% block center %}
+        <div style="display:inline-block;float:left">
+           <img width="250px" height="250px" src="profile.jpg"/> 
+        </div>
+        <div style="display:inline-block">
+        <ul>
+            <li>Personal Information </li>
+            <ul>
+                <li>Github: <a class="highlight" href="https://github.com/">Replace me</a></li>
+                <li>Linkedin: <a class="highlight" href="https://linkedin.com">Replace me</a></li>
+                <li>Email: <span class="highlight"> author [at] example.com</a>
+            </ul>
+            <li>Blog entries</li>
+            <ul>
+                {% for item in entries %}
+                <li><strong>{{item.date}}</strong> - <a href="{{item.url}}">{{item.title}}</a> </li>
+                {% if item.description %}
+                    <dd>{{item.description}}</dd>
+                {% endif %} 
+                {% endfor %}
+            </ul>
+         </ul>
+        </div>
+{% endblock %}
