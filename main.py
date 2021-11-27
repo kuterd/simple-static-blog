@@ -13,7 +13,7 @@ class BlogEntry:
         self.description = description
 
         content_file = open(path.join(ENTRIES_FOLDER, content))
-        self.content = markdown.markdown(content_file.read())
+        self.content = markdown.markdown(content_file.read(), extensions=['codehilite','fenced_code'])
         self.date = date.strftime("%d-%m-%Y")
         self.url = title.lower().replace(' ', '-') + ".html"
 
@@ -41,6 +41,7 @@ entries = [
     BlogEntry("Making a very simple static blog generator", "This is a description", "test.md", date.today()),
     BlogEntry("A entry without description", "", "test.md", date.today()),
     BlogEntry("Lorem ipsum", "Very descriptive", "lorem-ipsum.md", date.today()),
+    BlogEntry("Code highlight test", "Testing if we can highlight code in markdown", "code_test.md", date.today())
 ]
 
 render_all({"author": "Replace Me"}, entries)
