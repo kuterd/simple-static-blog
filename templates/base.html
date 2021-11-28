@@ -7,12 +7,13 @@
     </style>
     <link rel="stylesheet" href="highlight.css">
     <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     {% block head %}{% endblock %}
 </head>
 <body>
     <div id='center'>
         <div id="header">
-            <h2 style="display:inline;margin:0">{{author}}'s Blog</h2>
+            <h2 style="display:inline;margin:0">{{ local.headline.format(author=author) }}</h2>
             {% block header %}{% endblock %}
         </div>
         {% block center %}{% endblock %}

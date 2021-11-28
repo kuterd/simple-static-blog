@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
-    <meta name="description" content="Blog page of {{author}}">
+    <meta name="description" content="{{ local.headline.format(author=author) }}">
+    <title>{{ local.headline.format(author=author) }}</title>
 {% endblock %}
 
 {% block center %}
@@ -9,16 +10,44 @@
         </div>
         <div style="display:inline-block">
         <ul>
-            <li>Personal Information </li>
+            {% if active_languages.length != 0 %}
+
+            <li> {{local.other_languages}} </li>
+            <dd>
+            {% for lang in active_languages %}
+                {% if lang == language_code %}
+                <strong> {{ languages[lang].name }} </strong>
+                {% else %}
+                <a href="{{ languages[lang].index }}" class="highlight">{{ languages[lang].name}}</a>
+                {% endif %}
+                {{ " / " if not loop.last else "" }}
+            {% endfor %}
+            </dd>
+            {% endif %}
+            <li>{{ local.personal_information }}</li>
             <ul>
                 <li>Github: <a class="highlight" href="https://github.com/">Replace me</a></li>
                 <li>Linkedin: <a class="highlight" href="https://linkedin.com">Replace me</a></li>
                 <li>Email: <span class="highlight"> author [at] example.com</span></li>
             </ul>
-            <li>Blog entries</li>
+            <li>{{ local.blog_entries }}</li>
             <ul>
                 {% for item in entries %}
-                <li><strong>{{item.date}}</strong> - <a href="{{item.url}}">{{item.title}}</a> </li>
+                <li><strong>{{item.date}}</strong> - <a href="{{item.url}}">{{item.title}}</a>
+
+                {% if item.all_languages | length > 1 %}
+                [
+                {% for lang_entry in item.all_languages %}
+                    {% if lang_entry.language == item.language %}
+                    <strong>{{item.language}}</strong>
+                    {% else %}
+                    <a href="{{lang_entry.url}}">{{lang_entry.language}}</a>
+                    {% endif %}
+                    {{ " / " if not loop.last else "" }}
+                {% endfor %}
+                ]
+                {% endif %}
+                 </li>
                 {% if item.description %}
                     <dd>{{item.description}}</dd>
                 {% endif %} 

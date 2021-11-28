@@ -5,12 +5,23 @@
 {% endblock %}
 
 {% block header %}
-    <a href="index.html" id="back-button">&lt- Go back </a>
+    <a href="index.html" id="back-button">&lt- {{local.go_back}}</a>
 {% endblock %}
 {% block center %}
     <h2> {{entry.title}}</h2>
+    {% if entry.all_languages | length > 1 %}
+    {{ local.other_languages }}:
+    {% for lang_entry in entry.all_languages %}
+        {% if lang_entry.language == entry.language %}
+        <strong>{{ languages[lang_entry.language].name }}</strong>
+        {% else %}
+        <a href="{{lang_entry.url}}" class="highlight">{{ languages[lang_entry.language].name }}</a>
+        {% endif %}
+        {{ " / " if not loop.last else "" }}
+    {% endfor %}
+    {% endif %}
     <p>
-    <i style="float:right;">on <strong>{{entry.date}}</strong> by <strong>{{author}}</strong></i></br>
+    <i style="float:right;">{{ local.blog_date_author.format(author=author, date=entry.date)}}</i></br>
     {{entry.content}}
     </p>
 {% endblock %} 
