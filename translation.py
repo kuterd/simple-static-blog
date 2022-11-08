@@ -7,7 +7,8 @@ LANGUAGES = {
             "blog_entries": "Blog entries",
             "personal_information": "Personal information",
             "go_back": "Go back",
-            "other_languages": "Other languages"
+            "other_languages": "Other languages",
+            "rss_feed": "Feed"
         }
     },
     "tr": {
@@ -18,7 +19,8 @@ LANGUAGES = {
             "blog_entries": "Blog yazıları",
             "personal_information": "İletişim",
             "go_back": "Geri git",
-            "other_languages": "Diğer diller"
+            "other_languages": "Diğer diller",
+            "rss_feed": "Akış"
         }
     }
 }

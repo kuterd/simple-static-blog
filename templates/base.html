@@ -13,7 +13,7 @@
 <body>
     <div id='center'>
         <div id="header">
-            <h2 style="display:inline;margin:0">{{ local.headline.format(author=author) }}</h2>
+                <h2 style="display:inline;margin:0"><a href="/" style="color:white">{{ local.headline.format(author=author) }}</a></h2>
             {% block header %}{% endblock %}
         </div>
         {% block center %}{% endblock %}
