@@ -10,5 +10,5 @@
                 <link>{{entry.url}}</link>
         </item>
     {% endfor %}
-    <channel>
+    </channel>
 </rss>
