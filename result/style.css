@@ -2,7 +2,7 @@
     color:white;
 }
 a {
-    color:#5c67edff;
+    color:rgb(100, 109, 241);
 }
 
 html, body {
@@ -15,7 +15,7 @@ html, body {
 
 #header {
     align-items: center;
-    padding-bottom:20px;
+    padding-bottom:40px;
     display:block; 
 }
 
@@ -32,21 +32,28 @@ html, body {
 }
 
 #entry-tree {
-    max-width: 650px;
+    max-width: 700px;
     display:inline-block;
+    overflow-wrap: break-word;
+}
+
+#entry-tree ul{
+    margin-top:5px;
 }
 
 @media screen and (max-width:931px) {
     #entry-tree {
-        max-width: None;
+        margin-top:20px;
+        display:block;
     }
+    #profile-picture {
+        float:none;
+        display:block;
+    }
+
 }
 
 #back-button {
-    padding:10px;
-    padding-bottom:5px;
-    padding-top:5px;
-    background-color: #5c67edff;
     border-radius:5px;
     color:white;
     text-decoration: none;
@@ -58,8 +65,8 @@ html, body {
     padding:2px;
     padding-left:8px;
     padding-right:8px;
-    background-color: #5c67edff;
-    border-radius:5px;
+    border-radius:10px;
+    border: 1px solid white;
     color:white;
 }
 

@@ -5,9 +5,7 @@
 {% endblock %}
 
 {% block center %}
-        <div id="profile-picture">
-           <img width="250px" height="250px" src="profile.jpg"/> 
-        </div>
+        <img id="profile-picture" width="200px" height="200px" src="profile.jpg"/>
         <div id="entry-tree">
         <ul>
             {% if active_languages.length != 0 %}
@@ -36,7 +34,7 @@
                 <li><strong>{{item.date}}</strong> - <a href="{{item.url}}">{{item.title}}</a>
 
                 {% if item.all_languages | length > 1 %}
-                [
+                (
                 {% for lang_entry in item.all_languages %}
                     {% if lang_entry.language == item.language %}
                     <strong>{{item.language}}</strong>
@@ -45,7 +43,7 @@
                     {% endif %}
                     {{ " / " if not loop.last else "" }}
                 {% endfor %}
-                ]
+                )
                 {% endif %}
                  </li>
                 {% if item.description %}
