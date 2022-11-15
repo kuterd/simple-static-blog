@@ -2,20 +2,23 @@
     color:white;
 }
 a {
-    color:#303edb;
+    color:#5c67edff;
 }
-html {
+
+html, body {
     background-color: #121212 !important; 
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     margin:0;
     padding:0;
 }
+
 #header {
     align-items: center;
     padding-bottom:20px;
     display:block; 
 }
+
 #center {
     margin: auto;
     margin-top: 20px;
@@ -23,15 +26,30 @@ html {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+#profile-picture {
+    float:left;
+}
+
+#entry-tree {
+    max-width: 650px;
+    display:inline-block;
+}
+
+@media screen and (max-width:931px) {
+    #entry-tree {
+        max-width: None;
+    }
+}
+
 #back-button {
     padding:10px;
     padding-bottom:5px;
     padding-top:5px;
-    background-color: #303edb;
+    background-color: #5c67edff;
     border-radius:5px;
     color:white;
     text-decoration: none;
-    display:inline-block;
     float:right;
 }
 
@@ -40,11 +58,11 @@ html {
     padding:2px;
     padding-left:8px;
     padding-right:8px;
-    background-color: #303edb;
+    background-color: #5c67edff;
     border-radius:5px;
     color:white;
 }
+
 .codehilite {
     overflow: auto;
-} 
-
+}
