@@ -2,6 +2,7 @@
 {% block head %}
     <meta name="description" content="{{ local.headline.format(author=author) }}">
     <title>{{ local.headline.format(author=author) }}</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{language["feed_page"]}}">
 {% endblock %}
 
 {% block center %}
