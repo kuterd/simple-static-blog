@@ -34,6 +34,8 @@ class BlogEntry:
 
 file_loader = FileSystemLoader("templates")
 env = Environment(loader=file_loader)
+env.trim_blocks = True
+env.lstrip_blocks = True
 
 def render_page(file_name, template_name, params):
     print("Rendering page: {}".format(file_name))
