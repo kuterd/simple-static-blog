@@ -55,8 +55,6 @@ html, body {
 
 #back-button {
     border-radius:5px;
-    color:white;
-    text-decoration: none;
     float:right;
 }
 
@@ -68,6 +66,13 @@ html, body {
     border-radius:10px;
     border: 1px solid white;
     color:white;
+    text-decoration: none;
+}
+
+.highlight[href]:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .codehilite {
