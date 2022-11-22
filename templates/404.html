@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title> 404 Not found</title>
+{% endblock %}
+
+{% block header %}
+    <a href="{{languages[language_code].index}}" class="highlight" id="back-button">&crarr; {{local.go_back}}</a>
+{% endblock %}
+
+{% block center %}
+<h1>Whoa, Horsey !</h1>
+<p> The page you are looking for can not be found.
+{% endblock %}
