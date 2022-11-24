@@ -78,3 +78,31 @@ html, body {
 .codehilite {
     overflow: auto;
 }
+
+.admonition {
+    padding-left:7px;
+    padding-right:7px;
+    margin:5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.admonition.note {
+    background-color: rgb(48, 48, 95);
+    border-color: rgb(88, 88, 206);
+
+}
+
+.admonition.warn {
+    background-color: rgb(179, 179, 0);
+    border-color: rgb(255, 255, 0);
+}
+
+blockquote {
+    border-left: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 0px;
+    padding: 5px;
+}

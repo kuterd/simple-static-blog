@@ -26,7 +26,13 @@ class BlogEntry:
         self.description = description
 
         content_file = open(path.join(ENTRIES_FOLDER, content))
-        self.content = markdown.markdown(content_file.read(), extensions=['codehilite','fenced_code'])
+        text_content = content_file.read()
+        content_file.close()
+        
+        self.content = markdown.markdown(text_content,
+            extensions=['codehilite','admonition', 'fenced_code']
+        )
+        
         self.date = date.strftime("%d-%m-%Y")
         self.url = title.lower().replace(' ', '-') + ".html"
         self.all_languages = [self]
@@ -100,6 +106,7 @@ def render_all(general, entries):
 
 # ------Add-your-blog-posts-here------
 ENTRIES = [
+    BlogEntry("Admonitions & Block quotes", "Testing out admonitions and quotes", "admonitions_and_quotes.md", date.today()),
     {
         "en":
             BlogEntry(
